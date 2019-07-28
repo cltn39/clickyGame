@@ -6,8 +6,8 @@ const Jumbotron = () => (
     <header className="masthead">
       <div className="container d-flex h-100 align-items-center">
         <div className="mx-auto text-center">
-          <h1 className="mx-auto my-0 text-uppercase">Clicky Game</h1>
-          <h3 className="mx-auto my-0 mb-5">
+          <h1 className="title">Clicky Game</h1>
+          <h3 className="title">
             Click on an image to earn points, but don't click on any more than
             once!
           </h3>
@@ -19,19 +19,16 @@ const Jumbotron = () => (
       <div className="container">
         <div className="row">
           <div className="col-lg-8 mx-auto">
-            <h2 className="text-white mb-4">Built with Bootstrap 4</h2>
-            <p className="text-white-50">
-              Grayscale is a free Bootstrap theme created by Start Bootstrap. It
-              can be yours right now, simply download the template on
-              <a href="http://startbootstrap.com/template-overviews/grayscale/">
-                the preview page
+            <h2 className="text-white mb-4"  style= {{ color: " darkgrey "}} >Built with Create-react-app Bootstrap</h2>
+            <p className="text-white-50" style= {{ color: " darkgrey "}}>
+              Clicky Game is React based memory game. Inspired by the &nbsp;
+              <a href="https://clicky-game.netlify.com/">
+                example page
               </a>
-              . The theme is open source, and you can use it for any purpose,
-              personal or commercial.
+               &nbsp;that were provided, added personal spin to the UI/game play.
             </p>
           </div>
         </div>
-        <img src="img/ipad.png" className="img-fluid" alt="" />
       </div>
     </section>
   </header>

@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     fish,
     clickedCard: [],
+    alert: "Click an image to begin!",
     score: 0,
     topScore: 0
   };
@@ -27,9 +28,9 @@ imageClick = event => {
         return 0.8 - Math.random();
       }),
       clickedCard: [],
-      score: 0
+      score: 0,
+      alert: <span style= {{ color: "Red" }}>You guessed incorrectly!</span>
     });
-      alert("You lose. Play again?");
 
 //if you click on an available fish, your score is increased and cards reordered
   } else {console.log(event.target)
@@ -41,19 +42,20 @@ imageClick = event => {
         clickedCard: this.state.clickedCard.concat(
           currentCard
         ),
+        alert:<span style= {{ color: "green" }}>You guessed correctly!</span>,
         score: this.state.score + 1,
         topScore: this.state.score >= this.state.topScore ? (this.state.topScore +1):(this.state.topScore)
       },
 //if you get all 12 fish corrent you get a congrats message and the game resets        
       () => {
         if (this.state.score === 12) {
-          alert("Yay! You Win!");
           this.setState({
             fish: this.state.fish.sort(function(a, b) {
               return 0.5 - Math.random();
             }),
             clickedCard: [],
-            score: 0
+            score: 0,
+            alert: "Yay! you win!"
           });
         }
       }
@@ -68,6 +70,7 @@ render() {
       <Navbar 
         score={this.state.score}
         topScore={this.state.topScore}
+        alert={this.state.alert}
       />
       <Jumbotron />
       <Wrapper>
